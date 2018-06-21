@@ -1,5 +1,6 @@
 package com.learn.testing;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -8,13 +9,14 @@ import java.util.function.Supplier;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-class CalculatorTest {
+class MiClaseTest {
 
     /*
     * We need to add  <artifactId>junit-jupiter-params</artifactId> dependecy for @ParameterizedTest and @CsvSource
     * */
 
-    @ParameterizedTest(name = "{0} + {1} = {2}")
+    @DisplayName("Test with parameters")
+    @ParameterizedTest(name = "uno {0} + dos {1} = resultado {2}")
     @CsvSource(value = {
             "0,    1,   1",
             "1,    2,   3",
@@ -22,11 +24,11 @@ class CalculatorTest {
             "1,  100, 101"
     })
     public void testWithParameters(int first, int second, int expectedResult) {
-        Calculator calculator = new Calculator();
-        assertEquals(expectedResult, calculator.add(first, second),
+        MiClase miClase = new MiClase();
+        assertEquals(expectedResult, miClase.add(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
 
-        assertEquals(expectedResult, calculator.add(first, second),
+        assertEquals(expectedResult, miClase.add(first, second),
                 new Supplier<String>() {
                     @Override
                     public String get() {
