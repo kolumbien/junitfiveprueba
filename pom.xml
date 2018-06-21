@@ -74,4 +74,13 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>junitprofile</id>
+            <properties>
+                <propertiesFile>src/test/ejemplo.properties</propertiesFile>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>

@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-class MiClaseTest {
+class MiParametrizedTest {
 
     /*
     * We need to add  <artifactId>junit-jupiter-params</artifactId> dependecy for @ParameterizedTest and @CsvSource
