@@ -1,6 +1,7 @@
 package com.learn.testing;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -35,5 +36,15 @@ class MiClaseTest {
                         return first + " + " + second + " should equal " + expectedResult;
                     }
                 });
+    }
+
+    @Test
+    @DisplayName("╯°□°）╯")
+    void testWithDisplayNameContainingSpecialCharacters() {
+    }
+
+    @Test
+    @DisplayName("😱")
+    void testWithDisplayNameContainingEmoji() {
     }
 }
