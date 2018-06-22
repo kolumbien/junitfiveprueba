@@ -13,6 +13,7 @@
     <properties>
         <junit.platform.version>1.2.0</junit.platform.version>
         <junit.jupiter.version>5.2.0</junit.jupiter.version>
+        <includeTags></includeTags>
     </properties>
 
     <dependencies>
@@ -51,7 +52,7 @@
                 <version>2.21.0</version>
                 <configuration>
                     <properties>
-                        <includeTags>adri</includeTags>
+                        <includeTags>${includeTags}</includeTags>
                     </properties>
                 </configuration>
                 <dependencies>
