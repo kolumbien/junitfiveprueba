@@ -1,17 +1,17 @@
 package com.learn.testing;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.DisabledIf;
 import org.junit.jupiter.api.condition.EnabledIf;
 
 import java.time.LocalDate;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 //https://github.com/junit-team/junit5/blob/master/documentation/src/test/java/example/ConditionalTestExecutionDemo.java
 
+@Disabled
 public class ExecuteConditionsTest {
 
     @Disabled
@@ -26,7 +26,8 @@ public class ExecuteConditionsTest {
         System.out.println("TEnable if works");
     }
 
-    @RepeatedTest(10) // Dynamic JavaScript expression.
+    @RepeatedTest(value = 10,  name = "{displayName} {currentRepetition}/{totalRepetitions}")
+    // Dynamic JavaScript expression.
     @DisabledIf("Math.random() < 0.314159")
     void disableIfTest() {
         System.out.println("mightNotBeExecuted");
@@ -37,6 +38,12 @@ public class ExecuteConditionsTest {
     void enableIfSystemPropertyTest() {
         System.out.println("Im in test enableIfSystemPropertyTest");
         assertTrue(System.getProperty("java.specification.version").contains("1.8"));
+    }
+
+    @RepeatedTest(value = 3, name = RepeatedTest.LONG_DISPLAY_NAME)
+    @DisplayName("Details...")
+    void customDisplayNameWithLongPattern(TestInfo testInfo) {
+        assertEquals(testInfo.getDisplayName(), "Details... :: repetition 1 of 3");
     }
 
     /**

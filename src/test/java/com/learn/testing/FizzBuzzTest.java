@@ -1,9 +1,11 @@
 package com.learn.testing;
 
+import com.learn.annotations.Adri;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 class FizzBuzzTest {
 
@@ -27,8 +29,9 @@ class FizzBuzzTest {
 
     @DisplayName("fuzz 3")
     @Test
+    @Adri
     public void testNumberThree(){
-        System.out.println("test 2");
+        System.out.println("&&&&&&&&&&&   test 2     &&&&&&&&&&&&&&");
         String fizzBuzz = fizzBuzzObject.play(3);
 
         assertEquals(fizzBuzz, "Fizz");
@@ -54,5 +57,15 @@ class FizzBuzzTest {
     @AfterEach
     public void tearDown(){
        // fizzBuzzObject = null;
+    }
+
+    @Test
+    @DisplayName("╯°□°）╯")
+    void testWithDisplayNameContainingSpecialCharacters() {
+    }
+
+    @Test
+    @DisplayName("😱")
+    void testWithDisplayNameContainingEmoji() {
     }
 }
