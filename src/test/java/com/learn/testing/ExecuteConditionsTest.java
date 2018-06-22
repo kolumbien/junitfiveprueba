@@ -8,9 +8,9 @@ import org.junit.jupiter.api.condition.EnabledIf;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+//https://github.com/junit-team/junit5/blob/master/documentation/src/test/java/example/ConditionalTestExecutionDemo.java
 
 public class ExecuteConditionsTest {
 
@@ -39,10 +39,11 @@ public class ExecuteConditionsTest {
         assertTrue(System.getProperty("java.specification.version").contains("1.8"));
     }
 
+    /**
+     * Accessing Java packages and classes from script using Nashorn extensions
+     * http://winterbe.com/posts/2014/04/05/java8-nashorn-tutorial/
+     */
     @Test // Multi-line script, custom engine name and custom reason.
-    // end::user_guide_scripts[]
-    // @formatter:off
-	// tag::user_guide_scripts[]
 	@EnabledIf(value = {
 					"load('nashorn:mozilla_compat.js')",
 					"importPackage(java.time)",
@@ -53,14 +54,11 @@ public class ExecuteConditionsTest {
 				},
 				engine = "nashorn",
 				reason = "Self-fulfilling: {result}")
-	// end::user_guide_scripts[]
-	// @formatter:on
-        // tag::user_guide_scripts[]
     void theDayAfterTomorrow() {
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = today.plusDays(1);
         assertTrue(tomorrow.isAfter(today));
     }
-// end::user_guide_scripts[]
+
 
 }
