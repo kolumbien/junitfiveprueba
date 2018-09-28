@@ -67,7 +67,7 @@ class MiParametrizedTest {
 
     }
 
-    @Adri
+
     @ParameterizedTest
     @ValueSource(strings = { "racecar", "radar", "able was I ere I saw elba" })
     void palindromes(String candidate) {
@@ -179,6 +179,8 @@ class MiParametrizedTest {
     })
     void testWithArgumentsAggregator(@AggregateWith(PersonAggregator.class) Person person) {
         // perform assertions against person
+        System.out.println(person.getFirstName());
+        System.out.println(person.getLastName());
     }
 
 

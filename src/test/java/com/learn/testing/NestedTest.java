@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
-@Disabled
+
 public class NestedTest {
 
     Person person;
@@ -39,6 +39,7 @@ public class NestedTest {
             @BeforeEach
             void pushAnElement() {
                 person.setNames("ana", "perez");
+                assertTrue(person.isEmpty());
             }
 
             @Test

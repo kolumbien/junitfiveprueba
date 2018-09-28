@@ -27,9 +27,9 @@ class FizzBuzzTest {
         assertEquals(fizzBuzz, "1");
     }
 
+    //@Adri
     @DisplayName("fuzz 3")
     @Test
-    @Adri
     public void testNumberThree(){
         System.out.println("&&&&&&&&&&&   test 2     &&&&&&&&&&&&&&");
         String fizzBuzz = fizzBuzzObject.play(3);
@@ -69,3 +69,4 @@ class FizzBuzzTest {
     void testWithDisplayNameContainingEmoji() {
     }
 }
+

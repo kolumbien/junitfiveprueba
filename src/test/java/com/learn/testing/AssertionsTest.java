@@ -1,15 +1,23 @@
 package com.learn.testing;
 
+import com.learn.annotations.Adri;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtensionContext;
 
 import static java.time.Duration.ofMillis;
 import static java.time.Duration.ofMinutes;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Disabled
+//@Disabled
 class AssertionsTest {
+
+    @BeforeEach
+    void setUsp(ExtensionContext context) throws Exception {
+        System.out.println();
+    }
 
 
     @Test
@@ -33,8 +41,10 @@ class AssertionsTest {
         );
     }
 
+
     @Test
     void dependentAssertions() {
+
         Person person = new Person("Adriana", "Suarez");
 
 
@@ -43,14 +53,14 @@ class AssertionsTest {
         assertAll("properties",
                 () -> {
                     String firstName = person.getFirstName();
-                    assertNotNull(firstName);
+                    assertNotNull(firstName, "is not null");
 
                     System.out.println("group 1 with a fail");
 
                     // Executed only if the previous assertion is valid.
                     assertAll("first name",
                             () -> assertTrue(firstName.startsWith("A")),
-                            () -> assertTrue(firstName.endsWith("I"))
+                            () -> assertTrue(firstName.endsWith("o"))
                     );
                 },
                 () -> {
@@ -64,7 +74,7 @@ class AssertionsTest {
                     // Executed only if the previous assertion is valid.
                     assertAll("last name",
                             () -> assertTrue(lastName.startsWith("S")),
-                            () -> assertTrue(lastName.endsWith("Z"))
+                            () -> assertTrue(lastName.endsWith("z"))
                     );
                 }
         );
@@ -76,6 +86,16 @@ class AssertionsTest {
             throw new IllegalArgumentException("a message");
         });
         assertEquals("a message", exception.getMessage());
+    }
+
+
+    @Test
+    void notExceptionTesting() {
+        assertDoesNotThrow(()->{
+            new Person();
+        });
+
+        System.out.println();
     }
 
     @Test

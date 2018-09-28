@@ -16,6 +16,8 @@ public interface TestInterfaceDynamicTestsDemo {
 
     @TestFactory
     default Collection<DynamicTest> dynamicTestsFromCollection() {
+        System.out.println("dynamicTestsFromCollection");
+
         return Arrays.asList(
                 dynamicTest("1st dynamic test in test interface", () -> assertTrue(true)),
                 dynamicTest("2nd dynamic test in test interface", () -> assertEquals(4, 2 * 2))
