@@ -3,6 +3,7 @@ package com.learn.testing.extensions;
 
 import com.learn.annotations.Adri;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.learn.testing.extensions.parameterResolver.ParameterResolverClase.MyParameter;
@@ -21,13 +22,15 @@ public class PruebaTest extends ParentClase{
         System.out.println("PruebaTest.BeforeEach, mi metodo");
     }
 
-    @Adri
+
+    @Disabled
     @Test
     void miMetodo() {
 
         System.out.println("PruebaTest.mi metodo");
     }
 
+    @Disabled
     @Test
     void segundoMetodo(@MyParameter String parametro, @MyParameter int num) {
 

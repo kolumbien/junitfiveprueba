@@ -27,7 +27,7 @@ class FizzBuzzTest {
         assertEquals(fizzBuzz, "1");
     }
 
-    //@Adri
+    @Disabled
     @DisplayName("fuzz 3")
     @Test
     public void testNumberThree(){
@@ -37,6 +37,7 @@ class FizzBuzzTest {
         assertEquals(fizzBuzz, "Fizz");
     }
 
+    @Disabled
     @DisplayName("fuzz 5")
     @Test
     public void testNumberFive(){
@@ -46,6 +47,7 @@ class FizzBuzzTest {
         assertEquals(fizzBuzz, "Buzz");
     }
 
+    @Disabled
     @DisplayName("fuzz 0")
     @Test
     public void testNumberZero(){
@@ -54,16 +56,19 @@ class FizzBuzzTest {
         assertThrows(IllegalArgumentException.class, () -> fizzBuzzObject.play(0));
     }
 
+    @Disabled
     @AfterEach
     public void tearDown(){
        // fizzBuzzObject = null;
     }
 
+    @Disabled
     @Test
     @DisplayName("╯°□°）╯")
     void testWithDisplayNameContainingSpecialCharacters() {
     }
 
+    @Disabled
     @Test
     @DisplayName("😱")
     void testWithDisplayNameContainingEmoji() {

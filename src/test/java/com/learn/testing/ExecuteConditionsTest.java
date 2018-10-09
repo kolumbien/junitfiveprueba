@@ -20,12 +20,14 @@ public class ExecuteConditionsTest {
         System.out.println("This will never be executed");
     }
 
+    @Disabled
     @Test // Static JavaScript expression.
     @EnabledIf("2 * 3 == 6")
     void enableIfConditionTest() {
         System.out.println("TEnable if works");
     }
 
+    @Disabled
     @RepeatedTest(value = 10,  name = "{displayName} {currentRepetition}/{totalRepetitions}")
     // Dynamic JavaScript expression.
     @DisabledIf("Math.random() < 0.314159")
@@ -33,6 +35,7 @@ public class ExecuteConditionsTest {
         System.out.println("mightNotBeExecuted");
     }
 
+    @Disabled
     @Test // Regular expression testing bound system property.
     @EnabledIf("/1.8/.test(systemProperty.get('java.specification.version'))")
     void enableIfSystemPropertyTest() {
@@ -40,6 +43,7 @@ public class ExecuteConditionsTest {
         assertTrue(System.getProperty("java.specification.version").contains("1.8"));
     }
 
+    @Disabled
     @RepeatedTest(value = 3, name = RepeatedTest.LONG_DISPLAY_NAME)
     @DisplayName("Details...")
     void customDisplayNameWithLongPattern(TestInfo testInfo) {
@@ -50,6 +54,7 @@ public class ExecuteConditionsTest {
      * Accessing Java packages and classes from script using Nashorn extensions
      * http://winterbe.com/posts/2014/04/05/java8-nashorn-tutorial/
      */
+    @Disabled
     @Test // Multi-line script, custom engine name and custom reason.
 	@EnabledIf(value = {
 					"load('nashorn:mozilla_compat.js')",

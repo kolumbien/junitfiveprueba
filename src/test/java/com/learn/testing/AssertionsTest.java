@@ -19,7 +19,7 @@ class AssertionsTest {
         System.out.println();
     }
 
-
+    @Disabled
     @Test
     void standardAssertions() {
         assertEquals(2, 2);
@@ -28,6 +28,7 @@ class AssertionsTest {
                 + "to avoid constructing complex messages unnecessarily.");
     }
 
+    @Disabled
     @Test
     void groupedAssertions() {
 
@@ -41,7 +42,7 @@ class AssertionsTest {
         );
     }
 
-
+    @Disabled
     @Test
     void dependentAssertions() {
 
@@ -80,6 +81,7 @@ class AssertionsTest {
         );
     }
 
+    @Disabled
     @Test
     void exceptionTesting() {
         Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -88,7 +90,7 @@ class AssertionsTest {
         assertEquals("a message", exception.getMessage());
     }
 
-
+    @Disabled
     @Test
     void notExceptionTesting() {
         assertDoesNotThrow(()->{
@@ -98,6 +100,7 @@ class AssertionsTest {
         System.out.println();
     }
 
+    @Disabled
     @Test
     void timeoutNotExceeded() {
         // The following assertion succeeds.
@@ -110,6 +113,7 @@ class AssertionsTest {
         assertEquals(a, 2);
     }
 
+    @Disabled
     @Test
     void timeoutNotExceededWithResult() {
         // The following assertion succeeds, and returns the supplied object.
@@ -119,6 +123,7 @@ class AssertionsTest {
         assertEquals("a result", actualResult);
     }
 
+    @Disabled
     @Test
     void timeoutNotExceededWithMethod() {
         // The following assertion invokes a method reference and returns an object.
@@ -133,6 +138,7 @@ class AssertionsTest {
     /**
      * org.opentest4j.AssertionFailedError: execution exceeded timeout of 10 ms by 95 ms
      */
+    @Disabled
     @Test
     void timeoutExceeded() {
         // The following assertion fails with an error message similar to:
@@ -149,6 +155,7 @@ class AssertionsTest {
      *
      * org.opentest4j.AssertionFailedError: execution timed out after 10 ms
      */
+    @Disabled
     @Test
     void timeoutExceededWithPreemptiveTermination() {
         // The following assertion fails with an error message similar to:

@@ -31,7 +31,7 @@ class MiParametrizedTest {
     /*
     * We need to add  <artifactId>junit-jupiter-params</artifactId> dependecy for @ParameterizedTest and @CsvSource
     * */
-
+    @Disabled
     @DisplayName("Test with parameters")
     @ParameterizedTest(name = "uno {0} + dos {1} = resultado {2}")
     @CsvSource(value = {
@@ -53,7 +53,7 @@ class MiParametrizedTest {
                     }
                 });
     }
-
+    @Disabled
     @ParameterizedTest
     @CsvSource({
             "Jane, Doe",
@@ -67,7 +67,7 @@ class MiParametrizedTest {
 
     }
 
-
+    @Disabled
     @ParameterizedTest
     @ValueSource(strings = { "racecar", "radar", "able was I ere I saw elba" })
     void palindromes(String candidate) {
@@ -75,24 +75,28 @@ class MiParametrizedTest {
         assertTrue(isPalindrome(candidate));
     }
 
+    @Disabled
     @ParameterizedTest
     @ValueSource(ints = { 1, 2, 3 })
     void testWithValueSource(int argument) {
         assertTrue(argument > 0 && argument < 4);
     }
 
+    @Disabled
     @ParameterizedTest
     @EnumSource(TimeUnit.class)
     void testWithEnumSource(TimeUnit timeUnit) {
         assertNotNull(timeUnit);
     }
 
+    @Disabled
     @ParameterizedTest
     @EnumSource(value = TimeUnit.class, names = { "DAYS", "HOURS" })
     void testWithEnumSourceInclude(TimeUnit timeUnit) {
         assertTrue(EnumSet.of(TimeUnit.DAYS, TimeUnit.HOURS).contains(timeUnit));
     }
 
+    @Disabled
     @ParameterizedTest
     @EnumSource(value = TimeUnit.class, mode = EXCLUDE, names = { "DAYS", "HOURS" })
     void testWithEnumSourceExclude(TimeUnit timeUnit) {
@@ -101,6 +105,7 @@ class MiParametrizedTest {
         assertTrue(timeUnit.name().length() > 5);
     }
 
+    @Disabled
     @ParameterizedTest
     @EnumSource(value = TimeUnit.class, mode = MATCH_ALL, names = "^(M|N).+SECONDS$")
     void testWithEnumSourceRegex(TimeUnit timeUnit) {
@@ -113,6 +118,7 @@ class MiParametrizedTest {
      *
      * @param argument Stream, Iterable, Iterator, or array of arguments
      */
+    @Disabled
     @ParameterizedTest
     @MethodSource("stringProvider")
     void testWithSimpleMethodSource(String argument) {
@@ -123,6 +129,7 @@ class MiParametrizedTest {
         return Stream.of("foo", "bar");
     }
 
+    @Disabled
     @ParameterizedTest
     @MethodSource
     void testWithSimpleMethodSourceHavingNoValue(String argument) {
@@ -133,6 +140,7 @@ class MiParametrizedTest {
         return Stream.of("foo", "bar");
     }
 
+    @Disabled
     @ParameterizedTest
     @MethodSource("stringIntAndListProvider")
     void testWithMultiArgMethodSource(String str, int num, List<String> list) {
@@ -149,7 +157,7 @@ class MiParametrizedTest {
     }
 
 
-
+    @Disabled
     @ParameterizedTest
     @MethodSource("com.learn.utils.StringsProviders#names")
     void testWithExternalMethodSource(String name) {
@@ -166,12 +174,14 @@ class MiParametrizedTest {
         assertNotEquals(0, second);
     }
 
+    @Disabled
     @ParameterizedTest
     @ValueSource(strings = "42 Cats")
     void testWithImplicitFallbackArgumentConversion(Book book) {
         assertEquals("42 Cats", book.getTitle());
     }
 
+    @Disabled
     @ParameterizedTest
     @CsvSource({
             "Jane, Doe",

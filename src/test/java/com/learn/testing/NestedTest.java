@@ -12,12 +12,14 @@ public class NestedTest {
 
     Person person;
 
+    @Disabled
     @Test
     @DisplayName("is instantiated with new Stack()")
     void isInstantiatedWithNew() {
         System.out.println("isInstantiatedWithNew");
     }
 
+    @Disabled
     @Nested
     @DisplayName("when new")
     class WhenNew {

@@ -22,6 +22,7 @@ public class AssumptionsTest {
     /*
     *   org.opentest4j.TestAbortedException: Assumption failed: assumption is not true
      * */
+    @Disabled
     @Test
     void assumeTrueTest() {
         assumeTrue("CI".equals("bar"));
@@ -35,6 +36,7 @@ public class AssumptionsTest {
      * Expected :<true>
      * Actual   :<false>
      */
+    @Disabled
     @Test
     void assertTrueTest() {
         assertTrue("CI".equals("bar"));
@@ -43,6 +45,7 @@ public class AssumptionsTest {
         System.out.println("hello bar");
     }
 
+    @Disabled
     @Test
     void assumingThatTest() {
         assumingThat("CI".equals("CI"),

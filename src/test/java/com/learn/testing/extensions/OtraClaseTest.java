@@ -3,6 +3,7 @@ package com.learn.testing.extensions;
 import com.learn.annotations.Adri;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class OtraClaseTest extends ParentClase{
@@ -18,7 +19,7 @@ public class OtraClaseTest extends ParentClase{
         System.out.println("OtraClaseTest.BeforeEach, mi metodo");
     }
 
-    @Adri
+    @Disabled
     @Test
     void miMetodo() {
 
